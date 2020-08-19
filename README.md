@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Pokedex - NextJS
+
+A pokedex created using NextJS. Made for study purposes.
