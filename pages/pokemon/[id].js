@@ -1,15 +1,31 @@
 import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
 import fetch from 'node-fetch';
+
+import { Header } from '../../components';
+import BackIcon from '../../public/images/icons/back.svg';
 
 const Pokemon = ({ pokemon }) => (
   <div>
-    <h2>{pokemon.name}</h2>
-    <img src={pokemon.sprites.front_default} alt="Pokemon" />
+    <Head>
+      <title>{pokemon.name}</title>
+    </Head>
+    <main className="pokemon-info">
+      <Header />
+
+      <Link href="/">
+        <a>
+          <img src={BackIcon} alt="back" />
+        </a>
+      </Link>
+      <h2>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h2>
+      <img src={`/images/pokemons/${pokemon.name}.jpg`} alt={pokemon.name} />
+    </main>
   </div>
 );
 
 export const getStaticProps = async ({ params }) => {
-  console.log(params);
   const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
     // eslint-disable-next-line consistent-return
     .then((data) => {

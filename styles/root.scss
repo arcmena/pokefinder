@@ -12,3 +12,8 @@ body,
 #root {
   height: 100vh;
 }
+
+body {
+  @import './elements/preview-pokemon';
+  @import './views/pokemon.scss';
+}

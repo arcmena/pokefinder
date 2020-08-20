@@ -17,7 +17,7 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": 0,
     "react/jsx-props-no-spreading": ["error", { "custom": "ignore" }],
     "arrow-parens": 0,
