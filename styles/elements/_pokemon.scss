@@ -1,0 +1,17 @@
+.pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 7rem;
+  height: 12rem;
+
+  img {
+    height: 7rem;
+  }
+
+  text-decoration: none;
+  color: $light-blue;
+  font-family: Poppins;
+}

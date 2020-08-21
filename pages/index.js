@@ -2,52 +2,67 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import fetch from 'node-fetch';
 
-import { Header } from '../components';
+import Dex from '../pokemons.json';
+
+import SearchIcon from '../public/images/icons/search.svg';
 
 export const getStaticProps = async () => {
-  const pokemons = await fetch('https://pokeapi.co/api/v2/pokedex/1/')
-    // eslint-disable-next-line consistent-return
-    .then((data) => {
-      if (data.ok) return data.json();
-    })
-    .then((object) => {
-      const lenght = object.pokemon_entries;
-      return lenght.slice(0, 15);
-    })
-    .catch((error) => console.error(error));
+  const national = Dex.slice(0, 15);
 
   return {
     props: {
-      pokemons,
+      national,
     },
   };
 };
 
-const Home = ({ pokemons }) => (
-  <div className="container">
-    <Head>
-      <title>Pokedex - NextJS</title>
-    </Head>
+const Home = ({ national }) => {
+  const pad = (id) => {
+    if (id <= 9) {
+      return `#00${id}`;
+    }
+    if (id <= 99) {
+      return `#0${id}`;
+    }
+    return `#${id}`;
+  };
 
-    <main>
-      <Header />
-      <h1>Pokedex - NextJS</h1>
-      <ul>
-        {pokemons.map((pokemon) => (
-          <li key={pokemon.entry_number} className="preview-pokemon">
-            <Link href={`/pokemon/${pokemon.entry_number}`}>
-              <a>
-                {pokemon.pokemon_species.name[0].toUpperCase() + pokemon.pokemon_species.name.slice(1)}
-                <img src={`/images/pokemons/${pokemon.pokemon_species.name}.jpg`} alt={pokemon.pokemon_species.name} />
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </main>
-  </div>
-);
+  // console.log(Dex.map((pokemon) => pokemon.name));
+
+  return (
+    <div className="container-index">
+      <Head>
+        <title>Pokéfinder</title>
+      </Head>
+
+      <main className="content">
+        <h1>NATIONAL DEX</h1>
+
+        <form>
+          <div className="search-box">
+            <input type="text" />
+            <img src={SearchIcon} alt="search" />
+          </div>
+        </form>
+
+        <section>
+          {national.map((pokemon) => (
+            <div key={pokemon.id}>
+              <Link href={`/pokemon/${pokemon.name.toLowerCase()}`}>
+                <a className="pokemon">
+                  <img src={`/images/pokemons/${pokemon.name.toLowerCase()}.jpg`} alt={pokemon.name} />
+                  <span className="number">{pad(pokemon.id)}</span>
+                  <span className="name">{pokemon.name}</span>
+                  <div className="types">{pokemon.typeList.map((type) => type)}</div>
+                </a>
+              </Link>
+            </div>
+          ))}
+        </section>
+      </main>
+    </div>
+  );
+};
 
 export default Home;

@@ -1,7 +1,10 @@
 import React from 'react';
 
+import Logo from '../../public/images/logo.png';
+
 export default () => (
   <header>
-    <h1>header</h1>
+    <img src={Logo} alt="logotype" />
+    <h1>Pokéfinder</h1>
   </header>
 );
