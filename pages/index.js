@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+
+import { Pokemon } from '../components';
 
 import Dex from '../pokemons.json';
 
@@ -18,17 +19,9 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ national }) => {
-  const pad = (id) => {
-    if (id <= 9) {
-      return `#00${id}`;
-    }
-    if (id <= 99) {
-      return `#0${id}`;
-    }
-    return `#${id}`;
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
-
-  // console.log(Dex.map((pokemon) => pokemon.name));
 
   return (
     <div className="container-index">
@@ -39,7 +32,7 @@ const Home = ({ national }) => {
       <main className="content">
         <h1>NATIONAL DEX</h1>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="search-box">
             <input type="text" />
             <img src={SearchIcon} alt="search" />
@@ -48,16 +41,7 @@ const Home = ({ national }) => {
 
         <section>
           {national.map((pokemon) => (
-            <div key={pokemon.id}>
-              <Link href={`/pokemon/${pokemon.name.toLowerCase()}`}>
-                <a className="pokemon">
-                  <img src={`/images/pokemons/${pokemon.name.toLowerCase()}.jpg`} alt={pokemon.name} />
-                  <span className="number">{pad(pokemon.id)}</span>
-                  <span className="name">{pokemon.name}</span>
-                  <div className="types">{pokemon.typeList.map((type) => type)}</div>
-                </a>
-              </Link>
-            </div>
+            <Pokemon key={pokemon.id} id={pokemon.id} name={pokemon.name} types={pokemon.typeList} />
           ))}
         </section>
       </main>

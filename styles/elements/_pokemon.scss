@@ -9,9 +9,24 @@
 
   img {
     height: 7rem;
+    margin-bottom: 0.4rem;
   }
 
   text-decoration: none;
-  color: $light-blue;
   font-family: Poppins;
+
+  .number {
+    color: $black;
+  }
+
+  .name {
+    color: $blue;
+  }
+
+  .types {
+    margin: 0.2rem 0 0 0 !important;
+    small {
+      margin: 0.2rem;
+    }
+  }
 }

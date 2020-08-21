@@ -16,9 +16,13 @@ body,
 body {
   @import './main/colors';
   @import './main/layout';
-  @import './elements/pokemon';
+
   @import './views/info.scss';
   @import './views/index.scss';
+
+  @import './elements/pokemon';
+  @import './elements/form';
+  @import './elements/poketypes';
 
   background: $white;
 }
