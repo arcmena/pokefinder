@@ -1,22 +1,23 @@
 .container-index {
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
 
-      div {
-        margin: 1rem;
-      }
+            div {
+                margin: 1rem;
+            }
+        }
+
+        h1 {
+            font-family: Roboto;
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
     }
-
-    h1 {
-      font-family: Roboto;
-      font-size: 3rem;
-    }
-  }
 }
