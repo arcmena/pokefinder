@@ -24,9 +24,9 @@ const filterDescription = (description) => {
 };
 
 const Pokemon = ({ specificDetails, generalDetails, evolutionTree }) => {
-    console.log(specificDetails);
-    console.log(generalDetails);
-    console.log(evolutionTree);
+    // console.log(specificDetails);
+    // console.log(generalDetails);
+    // console.log(evolutionTree);
     return (
         <div className="pokemon-info-container">
             <Head>
