@@ -22,9 +22,15 @@ header {
         align-items: center;
         padding: 1rem;
         font-size: 1.2rem;
+        margin-top: 0.3rem;
 
         > span {
             margin-right: 1rem;
+        }
+
+        .active {
+            font-size: 1.7rem;
+            border-bottom: 2px solid $blue;
         }
     }
 }

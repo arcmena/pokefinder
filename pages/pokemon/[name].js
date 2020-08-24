@@ -7,6 +7,10 @@ import Dex from '../../pokemons.json';
 
 import BackIcon from '../../public/images/icons/back.svg';
 
+const serializeName = (pokename) => {
+    return pokename.toLowerCase().replace('.', '').replace(' ', '-').replace("'", '');
+};
+
 const Pokemon = ({ pokemon }) => (
     <div className="container">
         <Head>
@@ -43,7 +47,7 @@ export const getStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => ({
     paths: Dex.map((pokemon) => ({
         params: {
-            name: pokemon.name.toLowerCase(),
+            name: serializeName(pokemon.name),
         },
     })),
     fallback: false,

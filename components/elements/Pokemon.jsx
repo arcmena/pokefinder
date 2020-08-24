@@ -12,11 +12,15 @@ export default ({ id, name, types }) => {
         return `#${dexnum}`;
     };
 
+    const serializeName = (pokename) => {
+        return pokename.toLowerCase().replace('.', '').replace(' ', '-').replace("'", '');
+    };
+
     return (
         <div>
-            <Link href={`/pokemon/${name.toLowerCase()}`}>
+            <Link href={`/pokemon/${serializeName(name)}`}>
                 <a className="pokemon">
-                    <img src={`/images/pokemons/${name.toLowerCase()}.jpg`} alt={name} />
+                    <img src={`/images/pokemons/${serializeName(name)}.jpg`} alt={name} />
                     <small className="number">{pad(id)}</small>
                     <span className="name">{name}</span>
                     <div className="types">
