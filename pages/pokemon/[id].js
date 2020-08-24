@@ -19,7 +19,7 @@ const filterLegend = (titles) => {
 
 const filterDescription = (description) => {
     const filterLanguage = description.filter((language) => language.language.name === 'en');
-    const filterVersion = filterLanguage.filter((version) => version.version.name === 'alpha-sapphire');
+    const filterVersion = filterLanguage.filter((version) => version.version.name === 'ultra-sun' || 'ultra-moon');
     return filterVersion[0].flavor_text;
 };
 
