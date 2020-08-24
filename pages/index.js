@@ -8,18 +8,6 @@ import Dex from '../pokemons.json';
 
 import SearchIcon from '../public/images/icons/search.svg';
 
-export const getStaticProps = async () => {
-    const initialDex = Dex.slice(0, 15);
-    const fullDex = Dex;
-
-    return {
-        props: {
-            initialDex,
-            fullDex,
-        },
-    };
-};
-
 const Home = ({ initialDex, fullDex }) => {
     const [search, setSearch] = useState('');
     const [searchResult, setSearchResult] = useState(null);
@@ -61,6 +49,18 @@ const Home = ({ initialDex, fullDex }) => {
             </main>
         </div>
     );
+};
+
+export const getStaticProps = async () => {
+    const initialDex = Dex.slice(0, 15);
+    const fullDex = Dex;
+
+    return {
+        props: {
+            initialDex,
+            fullDex,
+        },
+    };
 };
 
 export default Home;

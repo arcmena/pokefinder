@@ -1,5 +1,13 @@
-.pokemon-info {
-  img {
-    height: 10rem;
-  }
+.pokemon-info-container {
+    .pokemon-info {
+        img {
+            height: 10rem;
+        }
+
+        a {
+            img {
+                height: 2.5rem;
+            }
+        }
+    }
 }

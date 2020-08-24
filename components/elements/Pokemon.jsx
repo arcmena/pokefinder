@@ -18,7 +18,7 @@ export default ({ id, name, types }) => {
 
     return (
         <div>
-            <Link href={`/pokemon/${serializeName(name)}`}>
+            <Link as={`/pokemon/${id}`} href="/pokemon/[id]">
                 <a className="pokemon">
                     <img src={`/images/pokemons/${serializeName(name)}.jpg`} alt={name} />
                     <small className="number">{pad(id)}</small>

@@ -141,7 +141,7 @@
   },
   {
     "id": 29,
-    "name": "Nidoran♀",
+    "name": "Nidoran-F",
     "typeList": ["Poison"]
   },
   {
@@ -156,7 +156,7 @@
   },
   {
     "id": 32,
-    "name": "Nidoran♂",
+    "name": "Nidoran-M",
     "typeList": ["Poison"]
   },
   {
@@ -4033,15 +4033,5 @@
     "id": 807,
     "name": "Zeraora",
     "typeList": ["Electric"]
-  },
-  {
-    "id": 808,
-    "name": "Meltan",
-    "typeList": ["Steel"]
-  },
-  {
-    "id": 809,
-    "name": "Melmetal",
-    "typeList": ["Steel"]
   }
 ]
