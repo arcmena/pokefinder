@@ -23,60 +23,85 @@ const filterDescription = (description) => {
     return filterVersion[0].flavor_text;
 };
 
+const padId = (dexnum) => {
+    if (dexnum <= 9) {
+        return `#00${dexnum}`;
+    }
+    if (dexnum <= 99) {
+        return `#0${dexnum}`;
+    }
+    return `#${dexnum}`;
+};
+
 const Pokemon = ({ specificDetails, generalDetails, evolutionTree }) => {
     // console.log(specificDetails);
     // console.log(generalDetails);
-    // console.log(evolutionTree);
+    console.log(evolutionTree);
     return (
         <div className="pokemon-info-container">
             <Head>
                 <title>{capitalFirstLetter(specificDetails.name)}</title>
             </Head>
 
-            <main className="pokemon-info">
-                <Link href="/">
+            <div className="top-bar">
+                <Link as="/" href="/">
                     <a>
                         <img src={BackIcon} alt="back" />
                     </a>
                 </Link>
-                <section>
+                <span>{padId(specificDetails.id)}</span>
+            </div>
+
+            <main className="pokemon-info">
+                <section className="principal">
                     <img src={`/images/pokemons/${specificDetails.name}.jpg`} alt={specificDetails.name} />
-                    <h2>{capitalFirstLetter(specificDetails.name)}</h2>
-                    <div>
+                    <h2>{specificDetails.name.toUpperCase()}</h2>
+                    <h4 className={capitalFirstLetter(generalDetails.types[0].type.name)}>
+                        {filterLegend(specificDetails.genera)}
+                    </h4>
+                    <div className="types">
                         {generalDetails.types.map(({ type }) => (
-                            <span key={type.name}>{capitalFirstLetter(type.name)}</span>
+                            <span key={type.name} className={`${capitalFirstLetter(type.name)}-background`}>
+                                {capitalFirstLetter(type.name)}
+                            </span>
                         ))}
                     </div>
                 </section>
-                <section>
-                    <h2>{filterLegend(specificDetails.genera)}</h2>
+                <section className="secondary">
                     <p>{filterDescription(specificDetails.flavor_text_entries)}</p>
-                    <span>{capitalFirstLetter(specificDetails.generation.name)} Pokémon</span>
 
-                    <ul>
-                        <li>
-                            <span>Height </span>
-                            {generalDetails.height}
-                        </li>
-                        <li>
-                            <span>Weight </span>
-                            {generalDetails.weight}
-                        </li>
-                        <li>
-                            <span>Abilities</span>
-                            {generalDetails.abilities.map((ability) => capitalFirstLetter(ability.ability.name))}
-                        </li>
-                    </ul>
+                    <table>
+                        <tr>
+                            <td>Height</td>
+                            <td>{generalDetails.height}</td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td>{generalDetails.weight}</td>
+                        </tr>
+                    </table>
 
-                    <ul>
+                    <table>
+                        <tr>
+                            <th>Abilities</th>
+                            {generalDetails.abilities.map((ability) => (
+                                <td>{capitalFirstLetter(ability.ability.name)}</td>
+                            ))}
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <th>Status</th>
+                            <th>Value</th>
+                        </tr>
                         {generalDetails.stats.map((stat) => (
-                            <li key={stat.stat.name}>
-                                <span>
-                                    {stat.stat.name.toUpperCase()}: {stat.base_stat}
-                                </span>
-                            </li>
+                            <tr key={stat.stat.name}>
+                                <td>{stat.stat.name.toUpperCase()}</td>
+                                <td> {stat.base_stat}</td>
+                            </tr>
                         ))}
-                    </ul>
+                    </table>
                 </section>
             </main>
         </div>

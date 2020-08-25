@@ -1,32 +1,33 @@
 .pokemon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  width: 7rem;
-  height: 12rem;
+    width: 7rem;
+    height: 12rem;
 
-  img {
-    height: 7rem;
-    margin-bottom: 0.4rem;
-  }
-
-  text-decoration: none;
-  font-family: Poppins;
-
-  .number {
-    color: $black;
-  }
-
-  .name {
-    color: $blue;
-  }
-
-  .types {
-    margin: 0.2rem 0 0 0 !important;
-    small {
-      margin: 0.2rem;
+    img {
+        max-width: 7rem;
+        max-height: 7rem;
+        margin-bottom: 0.4rem;
     }
-  }
+
+    text-decoration: none;
+    font-family: Poppins;
+
+    .number {
+        color: $black;
+    }
+
+    .name {
+        color: $blue;
+    }
+
+    .types {
+        margin: 0.2rem 0 0 0 !important;
+        small {
+            margin: 0.2rem;
+        }
+    }
 }

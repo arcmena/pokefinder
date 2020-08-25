@@ -1,71 +1,159 @@
 .Grass {
-  color: #0f960f;
+    color: #0f960f;
 }
 
 .Poison {
-  color: #550f96;
+    color: #550f96;
 }
 
 .Fire {
-  color: #c40c0c;
+    color: #c40c0c;
 }
 
 .Flying {
-  color: #6d9c98;
+    color: #6d9c98;
 }
 
 .Water {
-  color: #0f3e96;
+    color: #0f3e96;
 }
 
 .Bug {
-  color: #215e41;
+    color: #215e41;
 }
 
 .Dark {
-  color: #2e241c;
+    color: #2e241c;
 }
 
 .Dragon {
-  color: #3f0c91;
+    color: #3f0c91;
 }
 
 .Electric {
-  color: #d6b419;
+    color: #d6b419;
 }
 
 .Fairy {
-  color: #d320d3;
+    color: #d320d3;
 }
 
 .Fighting {
-  color: #610b0b;
+    color: #610b0b;
 }
 
 .Ghost {
-  color: #1d0955;
+    color: #1d0955;
 }
 
 .Ground {
-  color: #99620f;
+    color: #99620f;
 }
 
 .Ice {
-  color: #1cd1c2;
+    color: #1cd1c2;
 }
 
 .Steel {
-  color: #555555;
+    color: #555555;
 }
 
 .Normal {
-  color: #837676;
+    color: #837676;
 }
 
 .Rock {
-  color: #684410;
+    color: #684410;
 }
 
 .Psychic {
-  color: #530246;
+    color: #530246;
+}
+.Grass-background {
+    background: #0f960f;
+    color: $white;
+}
+
+.Poison-background {
+    background: #550f96;
+    color: $white;
+}
+
+.Fire-background {
+    background: #c40c0c;
+    color: $white;
+}
+
+.Flying-background {
+    background: #6d9c98;
+    color: $white;
+}
+
+.Water-background {
+    background: #0f3e96;
+    color: $white;
+}
+
+.Bug-background {
+    background: #215e41;
+    color: $white;
+}
+
+.Dark-background {
+    background: #2e241c;
+    color: $white;
+}
+
+.Dragon-background {
+    background: #3f0c91;
+}
+
+.Electric-background {
+    background: #d6b419;
+    color: $white;
+}
+
+.Fairy-background {
+    background: #d320d3;
+    color: $white;
+}
+
+.Fighting-background {
+    background: #610b0b;
+    color: $white;
+}
+
+.Ghost-background {
+    background: #1d0955;
+    color: $white;
+}
+
+.Ground-background {
+    background: #99620f;
+    color: $white;
+}
+
+.Ice-background {
+    background: #1cd1c2;
+    color: $white;
+}
+
+.Steel-background {
+    background: #555555;
+    color: $white;
+}
+
+.Normal-background {
+    background: #837676;
+    color: $white;
+}
+
+.Rock-background {
+    background: #684410;
+    color: $white;
+}
+
+.Psychic-background {
+    background: #83036d;
+    color: $white;
 }

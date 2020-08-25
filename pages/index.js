@@ -52,7 +52,7 @@ const Home = ({ initialDex, fullDex }) => {
 };
 
 export const getStaticProps = async () => {
-    const initialDex = Dex.slice(0, 15);
+    const initialDex = Dex;
     const fullDex = Dex;
 
     return {

@@ -1,12 +1,92 @@
 .pokemon-info-container {
-    .pokemon-info {
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 0 1.6rem;
+
         img {
-            height: 10rem;
+            height: 2.5rem;
         }
 
-        a {
+        span {
+            margin-right: 0.8rem;
+            font-family: Poppins;
+            font-size: 1.3rem;
+        }
+    }
+
+    .pokemon-info {
+        section {
+            padding: 1rem 1.5rem;
+
             img {
-                height: 2.5rem;
+                height: 12rem;
+            }
+        }
+
+        .principal {
+            h2 {
+                font-family: Poppins;
+                font-size: 2.5rem;
+                margin-top: 1rem;
+            }
+
+            h4 {
+                font-family: Poppins;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .types {
+                font-family: Roboto;
+                font-size: 1.8rem;
+
+                span {
+                    padding: 0.2rem 1.3rem;
+                    margin: 0.7rem;
+                    border-radius: 4rem;
+                }
+            }
+        }
+
+        .secondary {
+            padding: 0.5rem 1.9rem;
+
+            p {
+                font-family: Poppins, sans-serif;
+                font-size: 1.1rem;
+                text-align: justify;
+                color: $light-black;
+            }
+
+            table {
+                border-radius: 15px;
+                box-shadow: 0px 5px 20px 0px $shadow;
+                border-collapse: collapse;
+                font-family: Poppins, sans-serif;
+                font-size-adjust: 0.85rem;
+                overflow: hidden;
+                min-width: 100%;
+                margin: 1.5rem 0;
+
+                th {
+                    padding: 10px 15px;
+                    text-align: left;
+                    background: $light-blue;
+                    color: $light-black;
+                    font-weight: 500;
+                }
+
+                td {
+                    padding: 12px 20px;
+                }
+
+                tr {
+                    transition: all 0.25s ease;
+                    color: $light-black;
+                }
             }
         }
     }

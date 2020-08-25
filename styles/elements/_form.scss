@@ -25,7 +25,7 @@ form {
 
         &:focus-within {
             transform: translate(0, -2px);
-            box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 20px 0px $shadow;
         }
 
         input {
