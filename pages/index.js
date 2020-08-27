@@ -13,8 +13,9 @@ const Home = ({ initialDex, fullDex }) => {
     const [searchResult, setSearchResult] = useState(null);
 
     const handleSearch = (e) => {
-        setSearch(e.target.value);
-        setSearchResult(fullDex.filter((pokemon) => pokemon.name.toLowerCase().match(search)));
+        const { value } = e.target;
+        setSearch(value);
+        setSearchResult(fullDex.filter((pokemon) => pokemon.name.toLowerCase().match(value)));
     };
 
     const handleSubmit = (e) => {

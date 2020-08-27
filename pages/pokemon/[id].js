@@ -36,7 +36,7 @@ const padId = (dexnum) => {
 const Pokemon = ({ specificDetails, generalDetails, evolutionTree }) => {
     // console.log(specificDetails);
     // console.log(generalDetails);
-    console.log(evolutionTree);
+    // console.log(evolutionTree);
     return (
         <div className="pokemon-info-container">
             <Head>
@@ -71,36 +71,44 @@ const Pokemon = ({ specificDetails, generalDetails, evolutionTree }) => {
                     <p>{filterDescription(specificDetails.flavor_text_entries)}</p>
 
                     <table>
-                        <tr>
-                            <td>Height</td>
-                            <td>{generalDetails.height}</td>
-                        </tr>
-                        <tr>
-                            <td>Weight</td>
-                            <td>{generalDetails.weight}</td>
-                        </tr>
-                    </table>
-
-                    <table>
-                        <tr>
-                            <th>Abilities</th>
-                            {generalDetails.abilities.map((ability) => (
-                                <td>{capitalFirstLetter(ability.ability.name)}</td>
-                            ))}
-                        </tr>
-                    </table>
-
-                    <table>
-                        <tr>
-                            <th>Status</th>
-                            <th>Value</th>
-                        </tr>
-                        {generalDetails.stats.map((stat) => (
-                            <tr key={stat.stat.name}>
-                                <td>{stat.stat.name.toUpperCase()}</td>
-                                <td> {stat.base_stat}</td>
+                        <tbody>
+                            <tr>
+                                <td>Height</td>
+                                <td>{generalDetails.height}</td>
                             </tr>
-                        ))}
+                            <tr>
+                                <td>Weight</td>
+                                <td>{generalDetails.weight}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th rowSpan="2">Abilities</th>
+                                {generalDetails.abilities.map((ability) => (
+                                    <td key={ability.ability.name}>{capitalFirstLetter(ability.ability.name)}</td>
+                                ))}
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {generalDetails.stats.map((stat) => (
+                                <tr key={stat.stat.name}>
+                                    <td>{stat.stat.name.toUpperCase()}</td>
+                                    <td> {stat.base_stat}</td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </section>
             </main>
