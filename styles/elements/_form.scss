@@ -1,7 +1,8 @@
-form {
+.inputs {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap !important;
     width: 90%;
     height: 3.5rem;
 
@@ -46,5 +47,10 @@ form {
             right: 15px;
             top: 10px;
         }
+    }
+
+    #select {
+        width: 10rem;
+        padding: 0 1rem;
     }
 }
