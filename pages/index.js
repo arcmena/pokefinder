@@ -16,6 +16,7 @@ const Home = ({ initialDex, fullDex }) => {
         const { value } = e.target;
         setSearch(value);
         setSearchResult(fullDex.filter((pokemon) => pokemon.name.toLowerCase().match(value)));
+        // setSearchResult(fullDex.filter((pokemon) => pokemon.name.toLowerCase().indexOf(value) !== -1));
     };
 
     const handleSubmit = (e) => {
@@ -53,7 +54,7 @@ const Home = ({ initialDex, fullDex }) => {
 };
 
 export const getStaticProps = async () => {
-    const initialDex = Dex;
+    const initialDex = Dex.slice(0, 15);
     const fullDex = Dex;
 
     return {

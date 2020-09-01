@@ -37,6 +37,7 @@ const Pokemon = ({ specificDetails, generalDetails, evolutionTree }) => {
     // console.log(specificDetails);
     // console.log(generalDetails);
     // console.log(evolutionTree);
+
     return (
         <div className="pokemon-info-container">
             <Head>
@@ -83,14 +84,18 @@ const Pokemon = ({ specificDetails, generalDetails, evolutionTree }) => {
                         </tbody>
                     </table>
 
-                    <table>
-                        <tbody>
+                    <table className="abilities">
+                        <thead>
                             <tr>
-                                <th rowSpan="2">Abilities</th>
-                                {generalDetails.abilities.map((ability) => (
-                                    <td key={ability.ability.name}>{capitalFirstLetter(ability.ability.name)}</td>
-                                ))}
+                                <th>Abilities</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                            {generalDetails.abilities.map((ability) => (
+                                <tr key={ability.ability.name}>
+                                    <td key={ability.ability.name}>{capitalFirstLetter(ability.ability.name)}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
 
